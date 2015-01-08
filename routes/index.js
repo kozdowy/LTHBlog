@@ -13,4 +13,12 @@ router.get('/', function(req, res) {
   });
 });
 
+router.post('/addpost', function(req, res){
+  
+});
+
+router.post('/deletepost', function(req, res){
+
+});
+
 module.exports = router;
