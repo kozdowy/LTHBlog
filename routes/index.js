@@ -14,7 +14,27 @@ router.get('/', function(req, res) {
 });
 
 router.post('/addpost', function(req, res){
-  
+  var db = req.db;
+
+  var title = req.body.title;
+  var author = req.body.author;
+  var content = req.body.content;
+
+  var collection = db.get('posts');
+
+  collection.insert({
+    "title" : title,
+    "author" : author,
+    "content" : content
+  }, function (err, doc){
+    if (err) {
+      res.send("There was a problem adding the information to the database.");
+    }
+    else {
+      res.location("/");
+      res.redirect("/");
+    }
+  });
 });
 
 router.post('/deletepost', function(req, res){
