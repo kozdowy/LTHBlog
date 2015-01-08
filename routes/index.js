@@ -42,7 +42,16 @@ router.post('/deletepost', function(req, res){
   var id = req.body.idNumber;
 
   var collection = db.get('posts');
-  collection.remove();
+  collection.remove({"_id": id},
+      function(err, doc){
+        if(err){
+          res.send("There was a problem deleting the information from the database.");
+        }
+        else{
+          res.location("/");
+          res.redirect("/");
+        }
+      });
 });
 
 module.exports = router;
