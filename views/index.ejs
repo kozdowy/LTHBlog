@@ -5,7 +5,35 @@
     <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-    <!-- HEADER GOES HERE *Include Submit Button* -->
-    <!-- POSTS GO HERE *Include Delete Button for each* -->
+    <div id="header">
+      <div id="header-left">
+        <img id="logo" src="/images/mlogo.png">
+        <h1 id="title"><%= title %></h1>
+      </div>
+      <div id="header-right">
+        <a id="submit-link" href="/submit"><h3>Submit</h3></a>
+      </div>
+    </div>
+    <div id="wrapper">
+      <% for (var i = posts.length - 1; i >= 0 ; i--) { %>
+        <div class="post <%= (i % 2 == 0 ? "post-maize" : "post-blue") %>">
+          <div class="post-header">
+            <h3 class="post-title"><%= posts[i].title %></h3>
+            <span class="post-author">Authored by <%= posts[i].author %></span>
+          </div>
+          <div class="post-content-wrapper">
+            <p class="post-content">
+              <%= posts[i].content %>
+            </p>
+          </div>
+          <div class="post-footer">
+            <form id="formDeletePost" name="deletePost" method="post" action="/deletepost">
+              <input type="hidden" id="postId" name="idNumber" value="<%= posts[i]._id %>" />
+              <button id="btnDelete" name="delete">Delete Post</button>
+            </form>
+          </div>
+        </div>
+      <% } %>
+    </div>
   </body>
 </html>
