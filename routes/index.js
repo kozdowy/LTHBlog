@@ -38,7 +38,11 @@ router.post('/addpost', function(req, res){
 });
 
 router.post('/deletepost', function(req, res){
+  var db = req.db;
+  var id = req.body.idNumber;
 
+  var collection = db.get('posts');
+  collection.remove();
 });
 
 module.exports = router;
