@@ -1,0 +1,76 @@
+body{
+    background-color: #00274C;
+}
+
+#header{
+    color: white;
+    height: 100px;
+}
+
+#logo{
+    height: 100px;
+    float: left;
+}
+
+#header-left{
+    height: 100px;
+    width: 500px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#title{
+    position: relative;
+    bottom: 0;
+    vertical-align: middle;
+}
+
+#header-right{
+  float: right;
+  margin-right: 10px;
+  display: inline;
+}
+
+#submit-link{
+    color: white;
+}
+
+#wrapper{
+    clear: both;
+}
+
+.post{
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.post-maize{
+    background: #FFCB05;
+    color: black;
+}
+
+.post-blue{
+    background: #00274C;
+    color: white;
+}
+
+.post-header{
+    font-style: bold;
+}
+
+.post-title{
+
+}
+
+.post-author{
+    font-style: italic;
+}
+
+.post-content-wrapper{
+
+}
+
+.post-content{
+
+}
