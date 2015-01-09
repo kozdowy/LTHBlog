@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/submit', function(req, res){
-  res.redner('submit', {title : "Submit"});
+  res.render('submit', {title : "Submit"});
 });
 
 router.post('/addpost', function(req, res){
